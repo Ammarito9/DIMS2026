@@ -1,0 +1,11 @@
+module org.example.demo2 {
+    requires javafx.controls;
+    requires javafx.fxml;
+    requires java.sql;
+
+
+    opens org.example.demo2 to javafx.fxml;
+    exports org.example.demo2;
+    exports org.example.demo2.Controller;
+    opens org.example.demo2.Controller to javafx.fxml;
+}
