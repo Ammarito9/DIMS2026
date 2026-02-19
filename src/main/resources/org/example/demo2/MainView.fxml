@@ -3,9 +3,7 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 
-<TabPane tabClosingPolicy="UNAVAILABLE"
-         xmlns="http://javafx.com/javafx/25"
-         xmlns:fx="http://javafx.com/fxml/1">
+<TabPane tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
     <tabs>
         <Tab text="Studies">
             <content>
