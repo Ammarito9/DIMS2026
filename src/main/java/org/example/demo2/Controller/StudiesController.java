@@ -50,6 +50,7 @@ public class StudiesController {
 
     @FXML
     void Close_Btn_On_Action(ActionEvent event) {
+
         Platform.exit();
     }
 
@@ -58,7 +59,12 @@ public class StudiesController {
         checkId(tf_id.getText(), event);
         StudiesCrudOperations crudOperations=new StudiesCrudOperations();
         int id = Integer.parseInt(tf_id.getText());
-//continue the delete part and make a function in the studies crud operations file and then make the rest of the functions
+        int result = crudOperations.deleteStudiesById(id);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText("Studies with id " + tf_id.getText() + " deleted");
+        alert.showAndWait();
+        Clear_Btn_On_Action(event);
     }
 
     @FXML
@@ -74,7 +80,7 @@ public class StudiesController {
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Car with id " + id + " not found");
+            alert.setHeaderText("Studies with id " + id + " not found");
             alert.showAndWait();
         }
 
@@ -82,11 +88,54 @@ public class StudiesController {
 
     @FXML
     void Save_Btn_On_Action(ActionEvent event) {
+        checkId(tf_id.getText(), event);
+        Studies studies = new Studies();
+        studies.setDescription(tf_description.getText());
+        studies.setTitle(tf_title.getText());
+
+        studies.setId(Integer.parseInt(tf_id.getText()));
+        StudiesCrudOperations studiesCrudOperations = new StudiesCrudOperations();
+        int res = studiesCrudOperations.insertStudiesById(studies);
+        if(res > 0){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setHeaderText("Studies with id " + tf_id.getText() + " saved");
+            alert.showAndWait();
+        } else if(res == -1){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("There another Studies with id: " + tf_id.getText());
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error on save Studies!");
+            alert.showAndWait();
+        }
+
 
     }
 
     @FXML
     void Update_Btn_On_Action(ActionEvent event) {
+        checkId(tf_id.getText(), event);
+        Studies studies = new Studies();
+        studies.setDescription(tf_description.getText());
+        studies.setTitle(tf_title.getText());
+        studies.setId(Integer.parseInt(tf_id.getText()));
+        StudiesCrudOperations studiesCrudOperations = new StudiesCrudOperations();
+        int res = studiesCrudOperations.updateStudiesById(studies);
+        if(res > 0){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setHeaderText("Studies with id " + tf_id.getText() + " id updated");
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error on update Studies!");
+            alert.showAndWait();
+        }
 
     }
     public void checkId(String id, ActionEvent event) {

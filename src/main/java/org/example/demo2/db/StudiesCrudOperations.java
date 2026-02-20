@@ -30,5 +30,54 @@ public class StudiesCrudOperations {
             return Optional.of(studies);
         else
             return Optional.empty();
+
+
     }
+    public int insertStudiesById(Studies studies) {
+        int result = 0;
+        try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASS)) {
+            Statement statement = connection.createStatement();
+            String params = studies.getId() + ", \'" + studies.getDescription() + "\',\'" + studies.getTitle() + "\'";
+            // Check if there exist a record on that id
+            if(getStudiesById(studies.getId()).isPresent()) {
+                result = -1;
+            } else {
+                String query = "INSERT INTO studies (id, description, title) VALUES (" + params + ");";
+                result = statement.executeUpdate(query);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+    public int deleteStudiesById(int id ){
+        int result =0;
+        try(Connection connection= DriverManager.getConnection(DB_URL, USER, PASS)){
+            Statement statement=connection.createStatement();
+            String query =" DELETE FROM studies WHERE id = " + id;
+            result = statement.executeUpdate(query);
+        }catch(Exception e){
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+    public int updateStudiesById(Studies studies) {
+        int result = 0;
+        try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASS)) {
+            Statement statement = connection.createStatement();
+            String params = studies.getId() + ", \'" + studies.getDescription() + "\',\'" + studies.getTitle()+ "\'";
+            // Check if there exist a record on that id
+            if(getStudiesById(studies.getId()).isPresent()) {
+                String query = "UPDATE studies SET " +
+                        "description =  \'" + studies.getDescription() +"\', " +
+                        "title = \'" + studies.getTitle()  +  "\' WHERE id = " + studies.getId() + ";";
+                //System.out.printf("Query: " + query);
+                result = statement.executeUpdate(query);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
 }
