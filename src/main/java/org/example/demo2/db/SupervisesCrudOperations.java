@@ -7,11 +7,9 @@ import java.sql.*;
 import java.util.Optional;
 
 public class SupervisesCrudOperations {
-//    static final String DB_URL ="jdbc:postgresql://localhost:5432/DIMS1";
-    static final String DB_URL ="jdbc:postgresql://localhost:5432/SchoolManagementSystem3";
+    static final String DB_URL ="jdbc:postgresql://localhost:5432/DIMS1";
     static final String USER ="postgres";
-    // static final String PASS="0000";
-    static final String PASS="0115210D";
+    static final String PASS="0000";
 
     public Optional<Supervises> GetSupervisesById(int Id) {
         Supervises supervises = null;
