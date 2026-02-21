@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Spinner?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="250.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.Controller.SupervisesController">
+<AnchorPane prefHeight="250.0" prefWidth="409.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.Controller.SupervisesController">
     <children>
-        <Label fx:id="lbl_Student" layoutX="36.0" layoutY="28.0" text="Student" />
-        <Label fx:id="lbl_Performance" layoutX="36.0" layoutY="70.0" text="Performance" />
-        <TextField fx:id="tf_Student" layoutX="122.0" layoutY="24.0" />
-        <Button fx:id="btn_Save" layoutX="36.0" layoutY="155.0" mnemonicParsing="false" onAction="#Save_Button_On_Action" prefHeight="26.0" prefWidth="55.0" text="Save" />
-        <Button fx:id="btn_Update" layoutX="119.0" layoutY="155.0" mnemonicParsing="false" onAction="#Update_Button_On_Action" text="Update" />
-        <Button fx:id="btn_Delete" layoutX="197.0" layoutY="155.0" mnemonicParsing="false" onAction="#Delete_Button_On_Action" text="Delete" />
-        <Button fx:id="btn_Close" layoutX="278.0" layoutY="155.0" mnemonicParsing="false" onAction="#Close_Button_On_Action" prefHeight="26.0" prefWidth="55.0" text="Close" />
-        <Button fx:id="btn_Get" layoutX="289.0" layoutY="24.0" mnemonicParsing="false" onAction="#Get_Button_On_Action" prefHeight="26.0" prefWidth="43.0" text="Get" />
-        <Button fx:id="btn_Clear" layoutX="289.0" layoutY="66.0" mnemonicParsing="false" onAction="#Clear_Button_On_Action" text="Clear" />
-      <Spinner fx:id="spinner_Performance" layoutX="123.0" layoutY="66.0" />
+        <Label fx:id="lbl_Student" layoutX="16.0" layoutY="138.0" text="Student" />
+        <Label fx:id="lbl_Performance" layoutX="15.0" layoutY="173.0" text="Performance" />
+        <TextField fx:id="tf_Student" layoutX="102.0" layoutY="134.0" />
+        <Button fx:id="btn_Save" layoutX="15.0" layoutY="208.0" mnemonicParsing="false" onAction="#Save_Button_On_Action" prefHeight="26.0" prefWidth="55.0" text="Save" />
+        <Button fx:id="btn_Update" layoutX="102.0" layoutY="208.0" mnemonicParsing="false" onAction="#Update_Button_On_Action" text="Update" />
+        <Button fx:id="btn_Delete" layoutX="201.0" layoutY="208.0" mnemonicParsing="false" onAction="#Delete_Button_On_Action" text="Delete" />
+        <Button fx:id="btn_Close" layoutX="279.0" layoutY="209.0" mnemonicParsing="false" onAction="#Close_Button_On_Action" prefHeight="26.0" prefWidth="55.0" text="Close" />
+        <Button fx:id="btn_Get" layoutX="279.0" layoutY="30.0" mnemonicParsing="false" onAction="#Get_Button_On_Action" prefHeight="26.0" prefWidth="55.0" text="Get" />
+        <Button fx:id="btn_Clear" layoutX="278.0" layoutY="170.0" mnemonicParsing="false" onAction="#Clear_Button_On_Action" prefHeight="26.0" prefWidth="55.0" text="Clear" />
+      <Label fx:id="lbl_Id" layoutX="14.0" layoutY="35.0" text="ID" />
+      <TextField fx:id="tf_Id" layoutX="101.0" layoutY="30.0" prefHeight="26.0" prefWidth="43.0" />
+      <Label fx:id="lbl_Advisor_ID" layoutX="14.0" layoutY="69.0" text="Advisor ID" />
+      <TextField fx:id="tf_Advisor_ID" layoutX="101.0" layoutY="64.0" prefHeight="26.0" prefWidth="43.0" />
+      <Label fx:id="lbl_Advisor_Name_static" layoutX="171.0" layoutY="68.0" text="Advisor Name" />
+      <Label fx:id="lbl_Advisor_Name" layoutX="260.0" layoutY="69.0" text="-">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_Study_ID" layoutX="15.0" layoutY="103.0" text="StudyID" />
+      <TextField fx:id="tf_Study_ID" layoutX="102.0" layoutY="98.0" prefHeight="26.0" prefWidth="43.0" />
+      <Label fx:id="lbl_Study_title_static" layoutX="172.0" layoutY="102.0" text="Study title" />
+      <Label fx:id="lbl_Study_title" layoutX="260.0" layoutY="102.0" text="-">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tf_Performance" layoutX="103.0" layoutY="169.0" />
     </children>
 </AnchorPane>
