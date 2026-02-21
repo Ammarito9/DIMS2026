@@ -5,20 +5,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
-            prefHeight="250.0" prefWidth="350.0">
+<AnchorPane prefHeight="250.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.Controller.StudiesController">
     <children>
         <Label layoutX="60.0" layoutY="28.0" text="ID" />
         <Label layoutX="36.0" layoutY="70.0" text="Description" />
         <Label layoutX="54.0" layoutY="112.0" text="Title" />
-        <TextField layoutX="122.0" layoutY="24.0" />
-        <TextField layoutX="122.0" layoutY="66.0" />
-        <TextField layoutX="122.0" layoutY="108.0" />
-        <Button layoutX="52.0" layoutY="155.0" mnemonicParsing="false" text="Save" />
-        <Button layoutX="122.0" layoutY="155.0" mnemonicParsing="false" text="Update" />
-        <Button layoutX="197.0" layoutY="155.0" mnemonicParsing="false" text="Delete" />
-        <Button layoutX="272.0" layoutY="155.0" mnemonicParsing="false" text="Close" />
-        <Button layoutX="289.0" layoutY="24.0" mnemonicParsing="false" text="Get" />
-        <Button layoutX="289.0" layoutY="66.0" mnemonicParsing="false" text="Clear" />
+        <TextField fx:id="tf_id" layoutX="122.0" layoutY="24.0" />
+        <TextField fx:id="tf_description" layoutX="122.0" layoutY="66.0" />
+        <TextField fx:id="tf_title" layoutX="122.0" layoutY="108.0" />
+        <Button fx:id="btn_save" layoutX="52.0" layoutY="155.0" mnemonicParsing="false" onAction="#Save_Btn_On_Action" text="Save" />
+        <Button fx:id="btn_update" layoutX="122.0" layoutY="155.0" mnemonicParsing="false" onAction="#Update_Btn_On_Action" text="Update" />
+        <Button fx:id="btn_delete" layoutX="197.0" layoutY="155.0" mnemonicParsing="false" onAction="#Delete_Btn_On_Action" text="Delete" />
+        <Button fx:id="btn_close" layoutX="272.0" layoutY="155.0" mnemonicParsing="false" onAction="#Close_Btn_On_Action" text="Close" />
+        <Button fx:id="btn_get" layoutX="289.0" layoutY="24.0" mnemonicParsing="false" onAction="#Get_Btn_On_Action" text="Get" />
+        <Button fx:id="btn_clear" layoutX="289.0" layoutY="66.0" mnemonicParsing="false" onAction="#Clear_Btn_On_Action" text="Clear" />
     </children>
 </AnchorPane>

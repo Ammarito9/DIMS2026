@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.demo2.Controller.SupervisesController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="250.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.Controller.SupervisesController">
+    <children>
+        <Label fx:id="lbl_Student" layoutX="36.0" layoutY="28.0" text="Student" />
+        <Label fx:id="lbl_Performance" layoutX="36.0" layoutY="70.0" text="Performance" />
+        <TextField fx:id="tf_Student" layoutX="122.0" layoutY="24.0" />
+        <Button fx:id="btn_Save" layoutX="36.0" layoutY="155.0" mnemonicParsing="false" onAction="#Save_Button_On_Action" prefHeight="26.0" prefWidth="55.0" text="Save" />
+        <Button fx:id="btn_Update" layoutX="119.0" layoutY="155.0" mnemonicParsing="false" onAction="#Update_Button_On_Action" text="Update" />
+        <Button fx:id="btn_Delete" layoutX="197.0" layoutY="155.0" mnemonicParsing="false" onAction="#Delete_Button_On_Action" text="Delete" />
+        <Button fx:id="btn_Close" layoutX="278.0" layoutY="155.0" mnemonicParsing="false" onAction="#Close_Button_On_Action" prefHeight="26.0" prefWidth="55.0" text="Close" />
+        <Button fx:id="btn_Get" layoutX="289.0" layoutY="24.0" mnemonicParsing="false" onAction="#Get_Button_On_Action" prefHeight="26.0" prefWidth="43.0" text="Get" />
+        <Button fx:id="btn_Clear" layoutX="289.0" layoutY="66.0" mnemonicParsing="false" onAction="#Clear_Button_On_Action" text="Clear" />
+      <Spinner fx:id="spinner_Performance" layoutX="123.0" layoutY="66.0" />
+    </children>
 </AnchorPane>
